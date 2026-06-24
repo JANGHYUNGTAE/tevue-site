@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>듀얼 스크린 기기 연결 가이드 — TeVue</title>
+<meta name="description" content="TeVue 듀얼 스크린(차량 화면에 다른 앱 띄우기) 기기 연결 방법 — 개발자 옵션 켜기부터 무선 디버깅 페어링까지 단계별 안내." />
+<meta name="theme-color" content="#0b1220" />
+<link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
+<style>
+  :root{--bg:#0b1220;--surface:#161b22;--line:#21262d;--txt:#e6edf3;--sub:#8b949e;--blue:#2f81f7;--cyan:#22d3ee}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--txt);line-height:1.7;
+    font-family:-apple-system,"Apple SD Gothic Neo","Pretendard","Inter",sans-serif}
+  a{color:var(--blue);text-decoration:none}
+  .wrap{max-width:780px;margin:0 auto;padding:0 22px}
+  nav{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(11,18,32,.8);backdrop-filter:blur(10px)}
+  nav .wrap{display:flex;align-items:center;height:60px}
+  nav img{height:22px}
+  header.doc{padding:54px 0 24px}
+  header.doc h1{font-size:30px;font-weight:800;letter-spacing:-1px;line-height:1.25}
+  header.doc .meta{color:var(--sub);font-size:14px;margin-top:12px}
+  main{padding-bottom:70px}
+  .note{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--cyan);
+    border-radius:10px;padding:16px 18px;color:#c9d1d9;font-size:14.5px;margin:8px 0 30px}
+  .note b{color:var(--cyan)}
+  .step{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 22px 22px 64px;
+    position:relative;margin-bottom:14px;counter-increment:s}
+  .step::before{content:counter(s);position:absolute;left:18px;top:20px;
+    width:32px;height:32px;border-radius:9px;background:linear-gradient(120deg,var(--blue),var(--cyan));
+    color:#04101f;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:16px}
+  .steps{counter-reset:s}
+  .step h3{font-size:17px;font-weight:700;margin-bottom:6px}
+  .step p{color:#c9d1d9;font-size:15px}
+  .step .path{display:inline-block;background:#0d1117;border:1px solid var(--line);border-radius:7px;
+    padding:3px 9px;margin-top:8px;font-size:13.5px;color:var(--txt);font-family:ui-monospace,Menlo,monospace}
+  .warn{background:rgba(210,153,34,.10);border:1px solid #d29922;border-radius:10px;padding:14px 18px;
+    color:#e8c37a;font-size:14px;margin:24px 0 10px}
+  .back{display:inline-block;margin-top:26px;color:var(--sub);font-size:14px}
+  footer{border-top:1px solid var(--line);padding:28px 0;color:var(--sub);font-size:13px;margin-top:30px}
+  footer a{color:var(--sub)}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a href="index.html"><img src="assets/wordmark.svg" alt="TeVue" /></a></div></nav>
+
+<div class="wrap">
+  <header class="doc">
+    <h1>듀얼 스크린 기기 연결 가이드</h1>
+    <p class="meta">차량 화면에 폰과 다른 앱(예: 내비)을 띄우는 <b>듀얼 스크린</b> 최초 설정 방법입니다.</p>
+  </header>
+
+  <main>
+    <div class="note">
+      📱 <b>Android 전용</b> 기능입니다(iPhone 미지원). 처음 <b>한 번만</b> 기기 연결을 해두면 됩니다.
+      무선 디버깅을 이용하며, 별도 PC나 앱 설치는 필요 없습니다.
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <h3>개발자 옵션 켜기</h3>
+        <p>휴대전화 설정에서 개발자 옵션을 활성화합니다.</p>
+        <span class="path">설정 › 휴대전화 정보 › 소프트웨어 정보 › <b>빌드번호</b> 7번 연속 탭</span>
+        <p style="margin-top:8px">“개발자가 되었습니다” 문구가 뜨면 성공입니다.</p>
+      </div>
+
+      <div class="step">
+        <h3>무선 디버깅 켜기</h3>
+        <p>방금 생긴 개발자 옵션에서 무선 디버깅을 켭니다.</p>
+        <span class="path">설정 › 개발자 옵션 › <b>무선 디버깅</b> ON</span>
+      </div>
+
+      <div class="step">
+        <h3>TeVue에서 ‘자동 페어링 시작’ 누르기</h3>
+        <p>TeVue 앱 › <b>기기 연결</b> 화면에서 파란색 <b>‘자동 페어링 시작’</b> 버튼을 누릅니다.</p>
+      </div>
+
+      <div class="step">
+        <h3>‘페어링 코드로 기기 페어링’ 선택</h3>
+        <p>무선 디버깅 화면에서 <b>‘페어링 코드로 기기 페어링’</b>을 누르면 6자리 코드가 표시됩니다.</p>
+        <span class="path">개발자 옵션 › 무선 디버깅 › 페어링 코드로 기기 페어링</span>
+      </div>
+
+      <div class="step">
+        <h3>6자리 코드 입력 → 연결 완료</h3>
+        <p>TeVue 알림(또는 입력창)에 그 <b>6자리 코드</b>를 입력하면 자동으로 연결됩니다.
+        “준비 완료” 상태가 되면 끝입니다.</p>
+      </div>
+
+      <div class="step">
+        <h3>듀얼 스크린 시작</h3>
+        <p>이제 <b>‘듀얼 스크린 시작’</b>으로 차량 화면에 원하는 앱을 띄울 수 있습니다.</p>
+      </div>
+    </div>
+
+    <div class="warn">
+      ⚠️ 폰을 <b>재부팅하면 무선 디버깅이 꺼질 수 있습니다.</b> 그럴 땐 무선 디버깅을 다시 켜고
+      ‘자동 페어링 시작’으로 다시 연결하면 됩니다. (Android 보안 정책상 정상 동작입니다.)
+    </div>
+
+    <p style="color:var(--sub);font-size:14px;margin-top:18px">
+      해결이 어려우면 <a href="mailto:cs@peppercode.co.kr">cs@peppercode.co.kr</a> 로 문의해 주세요.
+    </p>
+
+    <a class="back" href="index.html">← 홈으로</a>
+  </main>
+</div>
+
+<footer><div class="wrap">© 2026 TeVue · <a href="index.html">홈</a> · <a href="privacy.html">개인정보처리방침</a> · <a href="terms.html">이용약관</a></div></footer>
+</body>
+</html>
