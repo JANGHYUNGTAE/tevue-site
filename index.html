@@ -75,6 +75,7 @@
     background:linear-gradient(135deg,#10192b,#0b1220);position:relative;overflow:hidden;
     box-shadow:0 30px 80px rgba(0,0,0,.45)}
   .device .screen img,.device .screen video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .device .screen video{filter:brightness(.8) saturate(.9) contrast(1.05)}
   .device .mock{position:absolute;inset:14px;border-radius:12px;border:1px solid rgba(47,129,247,.22);
     background:radial-gradient(circle at 50% 38%,rgba(47,129,247,.12),transparent 62%);
     display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px}
@@ -341,5 +342,17 @@
   </div>
 </footer>
 
+<script>
+  // 히어로 영상 — 느리게 재생(0.6배). loop 시에도 유지되며, 브라우저가 재생 시작할 때 재적용.
+  (function () {
+    var v = document.querySelector('.device .screen video');
+    if (!v) return;
+    var RATE = 0.6;
+    var apply = function () { try { v.playbackRate = RATE; } catch (e) {} };
+    apply();
+    v.addEventListener('loadedmetadata', apply);
+    v.addEventListener('play', apply);
+  })();
+</script>
 </body>
 </html>
