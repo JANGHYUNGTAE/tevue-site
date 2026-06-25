@@ -4,13 +4,13 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>TeVue — 끊기지 않는 드라이브 · 테슬라 화면 미러링</title>
-<meta name="description" content="테슬라 화면에 내 폰을. 광고만 보면 무료, Android는 듀얼 스크린(앱 2개 분할)까지. 테슬라 미러링 앱 TeVue(테뷰)." />
+<meta name="description" content="테슬라 화면에 내 폰을. 미러링·캐스팅(영상/웹 보내기)·듀얼 스크린, 광고만 보면 무료. 테슬라 미러링 앱 TeVue(테뷰)." />
 <meta name="theme-color" content="#0b1220" />
 
 <!-- Open Graph / 공유 미리보기 -->
 <meta property="og:type" content="website" />
 <meta property="og:title" content="TeVue — 끊기지 않는 드라이브" />
-<meta property="og:description" content="테슬라 화면에 내 폰을. 광고만 보면 무료, Android는 듀얼 스크린까지." />
+<meta property="og:description" content="테슬라 화면에 내 폰을. 미러링·캐스팅·듀얼 스크린, 광고만 보면 무료." />
 <meta property="og:url" content="https://tevue.co.kr" />
 <meta property="og:image" content="https://tevue.co.kr/assets/icon.svg" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -120,7 +120,7 @@
   .feature .plat-note{margin-top:14px;color:var(--cyan);font-weight:600;font-size:13.5px}
   .feature .setup-note{margin-top:8px;color:var(--sub);font-size:13px}
   .feature .visual{aspect-ratio:3/2;border-radius:16px;border:1px solid var(--line);overflow:hidden}
-  .feature .visual img{width:100%;height:100%;object-fit:cover;display:block}
+  .feature .visual img,.feature .visual video{width:100%;height:100%;object-fit:cover;display:block}
 
   /* faq */
   .faq{max-width:760px;margin:44px auto 0}
@@ -167,6 +167,7 @@
     <div class="navlinks">
       <a href="#why">Te<span style="color:var(--blue)">V</span>ue는?</a>
       <a href="#how">사용법</a>
+      <a href="#cast">캐스팅</a>
       <a href="#dual">듀얼 스크린</a>
       <a href="#faq">FAQ</a>
     </div>
@@ -216,6 +217,11 @@
         <div class="ic">💸</div>
         <h3>광고 보고 무료</h3>
         <p>유료 구독·결제 없이, 광고만 보면 모든 기능을 무료로 사용할 수 있어요.</p>
+      </div>
+      <div class="card">
+        <div class="ic">📺</div>
+        <h3>캐스팅 (영상·웹 보내기)</h3>
+        <p>유튜브·영상·웹 주소를 차 화면이 직접 재생해요. 폰을 다른 데 써도 계속 재생됩니다. (iPhone·Android)</p>
       </div>
       <div class="card">
         <div class="ic">🖥️</div>
@@ -269,6 +275,24 @@
         <p class="setup-note">⚙️ 최초 1회 기기 연결 설정이 필요합니다. <a href="guide.html" style="color:var(--cyan);font-weight:700">설정 가이드 보기 →</a></p>
       </div>
       <div class="visual"><img src="assets/dual-screen.jpg" alt="폰은 음악을, 테슬라 화면은 내비게이션을 — 듀얼 스크린" /></div>
+    </div>
+  </div>
+</section>
+
+<section id="cast" style="background:var(--surface);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="feature">
+      <div>
+        <span class="tag">iPhone · Android · 무료</span>
+        <h2>영상·웹을<br />차 화면으로 캐스팅.</h2>
+        <p>유튜브나 영상·웹 주소를 보내면 차 브라우저가 <b>직접 재생</b>해요. 미러링과 달리 폰 화면을 보내지 않아서, 폰을 다른 데 쓰거나 꺼도 <b>계속 재생</b>됩니다.</p>
+        <p class="plat-note">📱 iPhone·Android 모두 지원 · 넷플릭스 등 DRM 앱 영상은 제외돼요.</p>
+      </div>
+      <div class="visual">
+        <video autoplay loop muted playsinline preload="auto" style="filter:brightness(.8) saturate(.9) contrast(1.05)" aria-label="차 화면으로 캐스팅된 영상">
+          <source src="assets/hero.mp4" type="video/mp4" />
+        </video>
+      </div>
     </div>
   </div>
 </section>
