@@ -136,6 +136,18 @@
   .final h2{font-size:clamp(26px,4vw,38px);font-weight:800;letter-spacing:-1px}
   .final p{color:var(--sub);margin:14px auto 30px;max-width:480px}
 
+  /* 후원 */
+  .support-box{margin:34px auto 0;max-width:620px;text-align:center;
+    background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:38px 28px}
+  .support-box .emoji{font-size:38px;line-height:1}
+  .support-box p{color:#c9d1d9;font-size:15.5px;margin:16px auto 0;max-width:500px;line-height:1.75}
+  .support-box p b{color:var(--txt)}
+  .support-cta{display:inline-flex;align-items:center;gap:8px;margin-top:26px;
+    background:linear-gradient(120deg,var(--blue),var(--cyan));color:#04101f;font-weight:800;
+    padding:14px 30px;border-radius:12px;font-size:16px}
+  .support-cta:hover{opacity:.92}
+  .support-sub{color:var(--sub);font-size:13px;margin-top:14px}
+
   /* footer */
   footer{border-top:1px solid var(--line);padding:44px 0 60px;margin-top:30px}
   footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:flex-start}
@@ -170,6 +182,7 @@
       <a href="#cast">캐스팅</a>
       <a href="#dual">듀얼 스크린</a>
       <a href="#faq">FAQ</a>
+      <a href="#support">후원</a>
     </div>
     <a class="navcta" href="#download">다운로드</a>
   </div>
@@ -327,6 +340,24 @@
         <summary>운전 중에도 볼 수 있나요?</summary>
         <p>안전이 최우선입니다. 주행 중 영상 시청은 권장하지 않으며, 주차 중 사용을 권장합니다. 사용에 따른 책임은 사용자에게 있습니다.</p>
       </details>
+    </div>
+  </div>
+</section>
+
+<section id="support" style="background:var(--surface);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <p class="eyebrow">후원</p>
+    <h2 class="h2">무료로 쓰는 만큼, <span class="grad">마음만 보태주세요</span></h2>
+    <div class="support-box" style="background:var(--bg)">
+      <div class="emoji">🙏</div>
+      <p>
+        TeVue는 <b>광고만 보면 모든 기능을 무료</b>로 쓸 수 있도록 만들었습니다.
+        그래도 <b>커피 한 잔의 후원</b>은 개발자에게 정말 큰 힘이 됩니다 —
+        보내주신 마음은 <b>새로운 기능 개발</b>과 안정적인 <b>서버·도메인 운영</b>에 고스란히 쓰여,
+        더 빠르고 편한 업데이트로 돌아옵니다.
+      </p>
+      <a class="support-cta" href="support.html">🙏 후원하기</a>
+      <p class="support-sub">QR · 카카오뱅크 계좌로 후원할 수 있어요 · 후원은 전적으로 자발적입니다</p>
     </div>
   </div>
 </section>
