@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TeVue · Tesla 연동</title>
+<style>
+  html,body{margin:0;height:100%;background:#0b1220;color:#e6edf3;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    display:flex;align-items:center;justify-content:center;text-align:center}
+  .box{max-width:340px;padding:24px}
+  h1{font-size:20px;margin:0 0 8px}
+  p{color:#8b949e;font-size:14px;line-height:1.5}
+  a.btn{display:inline-block;margin-top:16px;background:#2f81f7;color:#fff;
+    text-decoration:none;padding:12px 20px;border-radius:10px;font-weight:600}
+  .err{color:#f0883e}
+</style>
+</head>
+<body>
+  <div class="box">
+    <h1 id="t">Tesla 계정 연동 중…</h1>
+    <p id="m">앱으로 돌아가는 중입니다. 자동으로 열리지 않으면 아래 버튼을 눌러 주세요.</p>
+    <a class="btn" id="open" href="#">TeVue 앱 열기</a>
+  </div>
+  <script>
+    (function () {
+      var q = new URLSearchParams(location.search);
+      var code = q.get('code');
+      var state = q.get('state') || '';
+      var error = q.get('error');
+      var t = document.getElementById('t');
+      var m = document.getElementById('m');
+      var open = document.getElementById('open');
+      if (error || !code) {
+        t.textContent = '연동에 실패했어요';
+        t.className = 'err';
+        m.textContent = error ? ('오류: ' + error) : '인증 코드를 받지 못했습니다. 앱에서 다시 시도해 주세요.';
+        open.style.display = 'none';
+        return;
+      }
+      // 인증 코드(단회용)를 앱으로 딥링크 전달 → 앱이 서버(tesla-auth)로 토큰 교환.
+      var deep = 'tevue://tesla/callback?code=' + encodeURIComponent(code) +
+        '&state=' + encodeURIComponent(state);
+      open.href = deep;
+      // 자동 실행 시도.
+      location.href = deep;
+    })();
+  </script>
+</body>
+</html>
